@@ -1,0 +1,11 @@
+header {
+    margin-bottom: 30px;
+}
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
