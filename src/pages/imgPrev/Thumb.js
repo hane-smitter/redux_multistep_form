@@ -4,17 +4,34 @@ import {
   Box,
   Typography,
   CircularProgress,
+  Button,
 } from "@material-ui/core";
+import Icon from "@material-ui/core/Icon";
+import { useDispatch } from "react-redux";
 
 import useStyles from "./Styles";
 
 const Thumb = ({ file }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   if (!file) return null;
 
   return (
     <Paper variant="outlined" className={classes.imageField}>
+      <Tooltip arrow title="Remove selected file">
+        <Button
+          className={classes.delImg}
+          onClick={() => {
+            dispatch({
+              type: "DEL_FILE",
+              payload: "",
+            });
+          }}
+        >
+          <Icon style={{ fontSize: "30px" }}>clear</Icon>
+        </Button>
+      </Tooltip>
       <Box>
         <Typography variant="h6" id="status">
           {!file?.loaded ? "loading..." : "current selected file:"}

@@ -39,7 +39,7 @@ const Pages = () => {
           >
             <FormStep>
               <Box paddingBottom={2}>
-                <FileInput />
+                <FileInput file={reduxState.imgFile} />
                 <Thumb file={reduxState.imgFile} />
               </Box>
               <Box paddingBottom={2}>

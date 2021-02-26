@@ -25,6 +25,11 @@ const reducer = (state = { condition: 'New' }, action) => {
                 ...state,
                 imgFile: action.payload
             };
+        case 'DEL_FILE': 
+            return {
+                ...state,
+                imgFile: action.payload
+            };
         default:
             return state;
     }
